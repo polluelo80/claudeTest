@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sn-kb-importer"
+version = "0.1.0"
+description = "Fetch public HTML pages and create ServiceNow knowledge articles from them"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["requests>=2.28", "beautifulsoup4>=4.11"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+sn-kb-import = "sn_kb_importer.cli:main"
+
+[tool.setuptools]
+packages = ["sn_kb_importer"]
